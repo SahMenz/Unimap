@@ -1,4 +1,9 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:newmum/screens/authScreen/choosingInstitute.dart';
+import 'package:newmum/screens/authScreen/utils.dart';
 import 'package:newmum/widget/generalWidget/uniheader.dart';
 import '../../constant/app_color.dart';
 
@@ -16,6 +21,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
   void _onContinue() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return choosingInstitute();
+          },
+        ),
+      );
     }
   }
 
@@ -44,6 +57,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
       return "Password must contain at least one special character";
     }
     return null; // No errors found, password is valid
+  }
+
+  Uint8List? _image;
+
+  void selectImage() async {
+    Uint8List img = await pickImage(ImageSource.gallery);
+    setState(() {
+      _image = img;
+    });
   }
 
   @override
@@ -153,6 +175,50 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
               const SizedBox(
                 height: 39,
+              ),
+              SizedBox(
+                width: 382,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Stack(
+                      children: [
+                        _image != null
+                            ? CircleAvatar(
+                                radius: 49,
+                                backgroundImage: MemoryImage(_image!),
+                              )
+                            : const CircleAvatar(
+                                radius: 49,
+                                backgroundImage:
+                                    AssetImage("assets/images/avatar.png"),
+                              ),
+                        Positioned(
+                          bottom: -5,
+                          left: 65,
+                          child: Container(
+                            width: 35,
+                            height: 35,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(3.0),
+                              child: IconButton(
+                                onPressed: selectImage,
+                                icon: const Icon(
+                                  Icons.edit,
+                                  size: 17,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ),
               const SizedBox(
                 height: 77,

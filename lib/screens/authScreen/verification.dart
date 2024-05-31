@@ -18,6 +18,7 @@ class ChooseVerificationMethod extends StatelessWidget {
     return Center(
       child: Scaffold(
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           title: const Center(
             child: Uniheader(),
           ),

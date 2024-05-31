@@ -42,6 +42,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: const Center(
           child: Uniheader(),
         ),

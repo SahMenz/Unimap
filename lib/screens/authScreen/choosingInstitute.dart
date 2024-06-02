@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:newmum/widget/generalWidget/uniheader.dart';
@@ -88,32 +90,52 @@ class _choosingInstituteState extends State<choosingInstitute> {
             children: [
               Container(
                 width: 382,
-                height: 410,
-                child: GoogleMap(
-                  initialCameraPosition: _initailPosition,
-                  mapType: MapType.normal,
-                  markers: Set<Marker>.of(myMarker),
-                  onMapCreated: (GoogleMapController controller) {
-                    _controller.complete(controller);
-                  },
-                ),
-              ),
-              SizedBox(
-                width: 48,
-                height: 48,
-                child: FloatingActionButton(
-                  backgroundColor: Colors.redAccent,
-                  onPressed: () {
-                    packData();
-                  },
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: const Icon(
-                    Icons.my_location,
-                    color: Colors
-                        .white, // Set icon color if needed (defaults to theme color)
-                  ),
+                height: 450,
+                child: Stack(
+                  alignment: Alignment.bottomRight,
+                  children: [
+                    GoogleMap(
+                      initialCameraPosition: _initailPosition,
+                      mapType: MapType.normal,
+                      markers: Set<Marker>.of(myMarker),
+                      onMapCreated: (GoogleMapController controller) {
+                        _controller.complete(controller);
+                      },
+                    ),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20.0),
+                        color: Colors.transparent, // Maintain map background
+                        border: Border.all(
+                          color: Colors.grey.withOpacity(0.3), // Border color
+                          width: 1.0,
+                        ),
+                      ),
+                      child: Container(),
+                    ),
+                    Positioned(
+                      bottom: 100,
+                      right: 7,
+                      child: SizedBox(
+                        width: 48,
+                        height: 48,
+                        child: FloatingActionButton(
+                          backgroundColor: Colors.redAccent,
+                          onPressed: () {
+                            packData();
+                          },
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                          child: const Icon(
+                            Icons.my_location,
+                            color: Colors
+                                .white, // Set icon color if needed (defaults to theme color)
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(

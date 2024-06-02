@@ -28,7 +28,8 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return ChooseVerificationMethod(
+            return ChooseVerificationMethod
+              (
               emailaddress: _email.text,
               phone: _phone.text,
             );

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:newmum/constant/app_font.dart';
 import 'package:newmum/screens/authScreen/enterAuthCode.dart';
 import 'package:newmum/screens/authScreen/profileScreen.dart';
-import 'package:newmum/widget/authWidget/indicators.dart';
 import 'package:newmum/widget/generalWidget/uniheader.dart';
 
 class ChooseVerificationMethod extends StatelessWidget {
@@ -134,9 +133,10 @@ class ChooseVerificationMethod extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return EnterAuthCode();
-                        },
+                        builder: (context) => EnterAuthCode(
+                          ProfileScreen: ProfileScreen(),
+                          chosenCredential: emailaddress,
+                        ),
                       ),
                     );
                   },
@@ -188,9 +188,10 @@ class ChooseVerificationMethod extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) {
-                          return ProfileScreen();
-                        },
+                        builder: (context) => EnterAuthCode(
+                          ProfileScreen: ProfileScreen(),
+                          chosenCredential: phone,
+                        ),
                       ),
                     );
                   },

@@ -212,7 +212,7 @@ class _choosingInstituteState extends State<choosingInstitute> {
                         "Choose Your",
                         style: TextStyle(
                           fontFamily: "NexaDemo-Bold",
-                          fontSize: 32,
+                          fontSize: 23,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -222,7 +222,7 @@ class _choosingInstituteState extends State<choosingInstitute> {
                         "Institution",
                         style: TextStyle(
                           fontFamily: "NexaDemo-Bold",
-                          fontSize: 32,
+                          fontSize: 23,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -244,7 +244,7 @@ class _choosingInstituteState extends State<choosingInstitute> {
                         prefixIcon: const Icon(Icons.search),
                         hintText: "Search",
                         hintStyle: const TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w600),
+                            fontSize: 13, fontWeight: FontWeight.w600),
                       ),
                     ),
                     const SizedBox(
@@ -264,7 +264,7 @@ class _choosingInstituteState extends State<choosingInstitute> {
                           textStyle: const TextStyle(
                               fontFamily: "Outfit-Medium",
                               fontWeight: FontWeight.w700,
-                              fontSize: 23),
+                              fontSize: 18),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),

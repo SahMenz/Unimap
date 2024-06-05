@@ -166,7 +166,7 @@ class ChooseVerificationMethod extends StatelessWidget {
                           emailaddress,
                           style: const TextStyle(
                             fontFamily: "Outfit-Medium",
-                            fontSize: 16,
+                            fontSize: 13,
                             color: Color.fromARGB(255, 72, 72, 72),
                           ),
                         ),
@@ -221,7 +221,7 @@ class ChooseVerificationMethod extends StatelessWidget {
                           phone,
                           style: const TextStyle(
                             fontFamily: AppFont.outfitMedium,
-                            fontSize: 16,
+                            fontSize: 13,
                             color: Color.fromARGB(255, 72, 72, 72),
                           ),
                         ),

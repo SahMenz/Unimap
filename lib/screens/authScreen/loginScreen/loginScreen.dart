@@ -52,7 +52,7 @@ class _loginScreenState extends State<loginScreen> {
             child: Column(
               children: [
                 const SizedBox(
-                  height: 99,
+                  height: 88,
                 ),
                 const SizedBox(
                   width: 380,
@@ -63,7 +63,7 @@ class _loginScreenState extends State<loginScreen> {
                         "Happy to",
                         style: TextStyle(
                           fontFamily: "NexaDemo-Bold",
-                          fontSize: 45,
+                          fontSize: 39,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -74,7 +74,7 @@ class _loginScreenState extends State<loginScreen> {
                         "help!",
                         style: TextStyle(
                           fontFamily: "NexaDemo-Bold",
-                          fontSize: 45,
+                          fontSize: 39,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -82,7 +82,7 @@ class _loginScreenState extends State<loginScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 71,
+                  height: 58,
                 ),
                 Form(
                   key: _formKey,
@@ -101,7 +101,7 @@ class _loginScreenState extends State<loginScreen> {
                           hintStyle: const TextStyle(
                             fontFamily: "Outfit-Medium",
                             color: Color.fromARGB(150, 72, 72, 72),
-                            fontSize: 16,
+                            fontSize: 12,
                           ),
                         ),
                       ),
@@ -122,7 +122,7 @@ class _loginScreenState extends State<loginScreen> {
                           hintStyle: const TextStyle(
                             fontFamily: "Outfit-Medium",
                             color: Color.fromARGB(150, 72, 72, 72),
-                            fontSize: 16,
+                            fontSize: 12,
                           ),
                         ),
                       ),
@@ -141,7 +141,7 @@ class _loginScreenState extends State<loginScreen> {
                             textStyle: const TextStyle(
                                 fontFamily: "Outfit-Medium",
                                 fontWeight: FontWeight.w700,
-                                fontSize: 23),
+                                fontSize: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(5),
                             ),
@@ -154,7 +154,7 @@ class _loginScreenState extends State<loginScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 22,
+                  height: 17,
                 ),
                 SizedBox(
                   width: 382,
@@ -167,7 +167,7 @@ class _loginScreenState extends State<loginScreen> {
                           "Forgot Password?",
                           style: TextStyle(
                             decoration: TextDecoration.underline,
-                            fontSize: 16,
+                            fontSize: 12,
                             fontWeight: FontWeight.w500,
                             color: Color(0xFF484848),
                           ),
@@ -177,7 +177,7 @@ class _loginScreenState extends State<loginScreen> {
                   ),
                 ),
                 const SizedBox(
-                  height: 92,
+                  height: 76,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -186,7 +186,7 @@ class _loginScreenState extends State<loginScreen> {
                       "Don’t have an account?",
                       style: TextStyle(
                         color: Color.fromARGB(255, 173, 173, 173),
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         fontFamily: "Outfit-Medium",
                       ),
@@ -206,7 +206,7 @@ class _loginScreenState extends State<loginScreen> {
                         "Sign Up",
                         style: TextStyle(
                           color: Color.fromARGB(255, 250, 8, 8),
-                          fontSize: 16,
+                          fontSize: 12,
                           fontWeight: FontWeight.w500,
                           fontFamily: "Outfit-Medium",
                         ),

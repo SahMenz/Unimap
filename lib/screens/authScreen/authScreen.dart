@@ -57,11 +57,11 @@ class _AuthScreenState extends State<AuthScreen> {
           child: Column(
             children: [
               const SizedBox(
-                height: 99,
+                height: 80,
               ),
               const Indicators(),
               const SizedBox(
-                height: 35,
+                height: 20,
               ),
               const SizedBox(
                 width: 380,
@@ -72,7 +72,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       "Lets take",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 45,
+                        fontSize: 32,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -83,7 +83,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       "you there!",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 45,
+                        fontSize: 32,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -91,7 +91,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
               const SizedBox(
-                height: 71,
+                height: 50,
               ),
               Form(
                 key: _formKey,
@@ -114,7 +114,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -138,7 +138,7 @@ class _AuthScreenState extends State<AuthScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -157,7 +157,7 @@ class _AuthScreenState extends State<AuthScreen> {
                           textStyle: const TextStyle(
                               fontFamily: "Outfit-Medium",
                               fontWeight: FontWeight.w700,
-                              fontSize: 23),
+                              fontSize: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           ),
@@ -183,7 +183,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       "  Continue with ",
                       style: TextStyle(
                         fontFamily: "Outfit-Medium",
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 217, 217, 217),
                         backgroundColor: Colors.white,
@@ -216,7 +216,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       const Text(
                         "Google",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 15,
                             fontFamily: "Outfit-Medium",
                             fontWeight: FontWeight.w500,
                             color: Colors.black),
@@ -235,7 +235,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     "Already have an account?",
                     style: TextStyle(
                       color: Color.fromARGB(255, 173, 173, 173),
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                       fontFamily: "Outfit-Medium",
                     ),
@@ -255,7 +255,7 @@ class _AuthScreenState extends State<AuthScreen> {
                       "Login",
                       style: TextStyle(
                         color: Color.fromARGB(255, 250, 8, 8),
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         fontFamily: "Outfit-Medium",
                       ),

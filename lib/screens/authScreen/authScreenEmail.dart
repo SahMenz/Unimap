@@ -54,7 +54,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
           child: Column(
             children: [
               const SizedBox(
-                height: 99,
+                height: 80,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -116,7 +116,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                 ],
               ),
               const SizedBox(
-                height: 35,
+                height: 20,
               ),
               const SizedBox(
                 width: 380,
@@ -127,7 +127,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                       "Lets take",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 45,
+                        fontSize: 32,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -138,7 +138,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                       "you there!",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 45,
+                        fontSize:32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -146,7 +146,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                 ),
               ),
               const SizedBox(
-                height: 71,
+                height: 50,
               ),
               Form(
                 key: _formKey,
@@ -178,7 +178,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -207,7 +207,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 10,
                         ),
                       ),
                     ),
@@ -226,7 +226,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                           textStyle: const TextStyle(
                               fontFamily: "Outfit-Medium",
                               fontWeight: FontWeight.w700,
-                              fontSize: 23),
+                              fontSize: 16),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(4),
                           ),
@@ -252,7 +252,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                       "  Continue with ",
                       style: TextStyle(
                         fontFamily: "Outfit-Medium",
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         color: Color.fromARGB(255, 217, 217, 217),
                         backgroundColor: Colors.white,
@@ -285,7 +285,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                       const Text(
                         "Google",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 15,
                             fontFamily: "Outfit-Medium",
                             fontWeight: FontWeight.w500,
                             color: Colors.black),
@@ -304,7 +304,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                     "Already have an account?",
                     style: TextStyle(
                       color: Color.fromARGB(255, 173, 173, 173),
-                      fontSize: 16,
+                      fontSize: 14,
                       fontWeight: FontWeight.w500,
                       fontFamily: "Outfit-Medium",
                     ),
@@ -324,7 +324,7 @@ class _AuthEmailScreenState extends State<AuthEmailScreen> {
                       "Login",
                       style: TextStyle(
                         color: Color.fromARGB(255, 250, 8, 8),
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.w500,
                         fontFamily: "Outfit-Medium",
                       ),

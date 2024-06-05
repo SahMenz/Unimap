@@ -19,7 +19,7 @@ class EnterAuthCode extends StatefulWidget {
 }
 
 class _EnterAuthCodeState extends State<EnterAuthCode> {
-  int _secondsRemaining = 30;
+  int _secondsRemaining = 5;
   Timer? _timer;
 
   @override
@@ -54,264 +54,295 @@ class _EnterAuthCodeState extends State<EnterAuthCode> {
               child: Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/images/initialscreen.png"),
-                  ),
+                      image: AssetImage("assets/images/otpbackground.png"),
+                      fit: BoxFit.cover),
                 ),
                 height: MediaQuery.of(context).size.height,
-                child: BackdropFilter(
-                  filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-                  child: Center(
-                    child: Container(
-                      height: 328,
-                      width: 328,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(31.0),
-                        child: Column(
-                          children: [
-                            SizedBox(
-                              width: double.infinity,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text(
-                                    "Enter",
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.w900,
-                                      fontFamily: "NexaDemo-Bold",
-                                    ),
+                child: Center(
+                  child: Container(
+                    height: 332,
+                    width: 325,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.white,
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(25.0),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: double.infinity,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Enter",
+                                  style: TextStyle(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.w900,
+                                    fontFamily: "NexaDemo-Bold",
                                   ),
-                                  const Text(
-                                    "Authentication",
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.w900,
-                                      fontFamily: "NexaDemo-Bold",
-                                    ),
+                                ),
+                                const Text(
+                                  "Authentication",
+                                  style: TextStyle(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.w900,
+                                    fontFamily: "NexaDemo-Bold",
                                   ),
-                                  const Text(
-                                    "Code",
-                                    style: TextStyle(
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.w900,
-                                      fontFamily: "NexaDemo-Bold",
-                                    ),
+                                ),
+                                const Text(
+                                  "Code",
+                                  style: TextStyle(
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.w900,
+                                    fontFamily: "NexaDemo-Bold",
                                   ),
-                                  const SizedBox(
-                                    height: 9,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text(
-                                        "sent to ",
-                                        style: TextStyle(
-                                          color: Colors.grey.shade400,
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w400,
-                                          fontFamily: "outfitMedium",
-                                        ),
+                                ),
+                                const SizedBox(
+                                  height: 6,
+                                ),
+                                Row(
+                                  children: [
+                                    Text(
+                                      "sent to ",
+                                      style: TextStyle(
+                                        color: Colors.grey.shade400,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "outfitMedium",
                                       ),
-                                      Text(
-                                        widget.chosenCredential,
-                                        style: TextStyle(
-                                          color: Colors.grey.shade700,
-                                          fontSize: 18,
-                                          fontWeight: FontWeight.w400,
-                                          fontFamily: "outfitMedium",
-                                        ),
+                                    ),
+                                    Text(
+                                      widget.chosenCredential,
+                                      style: TextStyle(
+                                        color: Colors.grey.shade700,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w400,
+                                        fontFamily: "outfitMedium",
                                       ),
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          Form(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  width: 39,
+                                  child: TextFormField(
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    },
+                                    keyboardType: TextInputType.number,
+                                    textAlign: TextAlign.center,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(1)
                                     ],
-                                  )
-                                ],
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 25,
-                            ),
-                            Form(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  SizedBox(
-                                    height: 50,
-                                    width: 44,
-                                    child: TextFormField(
-                                      onChanged: (value) {
-                                        if (value.length == 1) {
-                                          FocusScope.of(context).nextFocus();
-                                        }
-                                      },
-                                      keyboardType: TextInputType.number,
-                                      textAlign: TextAlign.center,
-                                      inputFormatters: [
-                                        LengthLimitingTextInputFormatter(1)
-                                      ],
-                                      style: const TextStyle(
-                                          color: Colors.black87, fontSize: 30),
-                                      decoration: InputDecoration(
-                                        contentPadding:
-                                            const EdgeInsets.all(8.0),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: const Color.fromARGB(
-                                            100, 81, 81, 70),
+                                    style: const TextStyle(
+                                        color: Colors.black87, fontSize: 13),
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.all(8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
                                       ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.black),
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      filled: true,
+                                      fillColor:
+                                          const Color.fromARGB(50, 81, 81, 70),
                                     ),
                                   ),
-                                  Container(
-                                    width: 1, // Set width for the line
-                                    height: 13, // Adjust height as needed
-                                    color: Colors.grey.shade300, // Set color
-                                  ),
-                                  SizedBox(
-                                    height: 50,
-                                    width: 44,
-                                    child: TextFormField(
-                                      onChanged: (value) {
-                                        if (value.length == 1) {
-                                          FocusScope.of(context).nextFocus();
-                                        }
-                                      },
-                                      textAlign: TextAlign.center,
-                                      keyboardType: TextInputType.number,
-                                      inputFormatters: [
-                                        LengthLimitingTextInputFormatter(1)
-                                      ],
-                                      style: const TextStyle(
-                                          color: Colors.black87, fontSize: 30),
-                                      decoration: InputDecoration(
-                                        contentPadding:
-                                            const EdgeInsets.all(8.0),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: const Color.fromARGB(
-                                            100, 81, 81, 70),
+                                ),
+                                Container(
+                                  width: 1, // Set width for the line
+                                  height: 13, // Adjust height as needed
+                                  color: Colors.grey.shade300, // Set color
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: 39,
+                                  child: TextFormField(
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    },
+                                    textAlign: TextAlign.center,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(1)
+                                    ],
+                                    style: const TextStyle(
+                                        color: Colors.black87, fontSize: 13),
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.all(8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
                                       ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.black),
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      filled: true,
+                                      fillColor:
+                                          const Color.fromARGB(50, 81, 81, 70),
                                     ),
                                   ),
-                                  Container(
-                                    width: 1, // Set width for the line
-                                    height: 13, // Adjust height as needed
-                                    color: Colors.grey.shade300, // Set color
-                                  ),
-                                  SizedBox(
-                                    height: 50,
-                                    width: 44,
-                                    child: TextFormField(
-                                      onChanged: (value) {
-                                        if (value.length == 1) {
-                                          FocusScope.of(context).nextFocus();
-                                        }
-                                      },
-                                      textAlign: TextAlign.center,
-                                      keyboardType: TextInputType.number,
-                                      inputFormatters: [
-                                        LengthLimitingTextInputFormatter(1)
-                                      ],
-                                      style: const TextStyle(
-                                          color: Colors.black87, fontSize: 30),
-                                      decoration: InputDecoration(
-                                        contentPadding:
-                                            const EdgeInsets.all(8.0),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: const Color.fromARGB(
-                                            100, 81, 81, 70),
+                                ),
+                                Container(
+                                  width: 1, // Set width for the line
+                                  height: 13, // Adjust height as needed
+                                  color: Colors.grey.shade300, // Set color
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: 39,
+                                  child: TextFormField(
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    },
+                                    textAlign: TextAlign.center,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(1)
+                                    ],
+                                    style: const TextStyle(
+                                        color: Colors.black87, fontSize: 13),
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.all(8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
                                       ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.black),
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      filled: true,
+                                      fillColor:
+                                          const Color.fromARGB(50, 81, 81, 70),
                                     ),
                                   ),
-                                  Container(
-                                    width: 1, // Set width for the line
-                                    height: 13, // Adjust height as needed
-                                    color: Colors.grey.shade300, // Set color
-                                  ),
-                                  SizedBox(
-                                    height: 50,
-                                    width: 44,
-                                    child: TextFormField(
-                                      onChanged: (value) {
-                                        if (value.length == 1) {
-                                          FocusScope.of(context).nextFocus();
-                                        }
-                                      },
-                                      textAlign: TextAlign.center,
-                                      keyboardType: TextInputType.number,
-                                      inputFormatters: [
-                                        LengthLimitingTextInputFormatter(1)
-                                      ],
-                                      style: const TextStyle(
-                                          color: Colors.black87, fontSize: 30),
-                                      decoration: InputDecoration(
-                                        contentPadding:
-                                            const EdgeInsets.all(8.0),
-                                        enabledBorder: OutlineInputBorder(
-                                          borderSide: BorderSide.none,
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        focusedBorder: OutlineInputBorder(
-                                          borderSide: const BorderSide(
-                                              color: Colors.black),
-                                          borderRadius:
-                                              BorderRadius.circular(5.0),
-                                        ),
-                                        filled: true,
-                                        fillColor: const Color.fromARGB(
-                                            100, 81, 81, 70),
+                                ),
+                                Container(
+                                  width: 1, // Set width for the line
+                                  height: 13, // Adjust height as needed
+                                  color: Colors.grey.shade300, // Set color
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: 39,
+                                  child: TextFormField(
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    },
+                                    textAlign: TextAlign.center,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(1)
+                                    ],
+                                    style: const TextStyle(
+                                        color: Colors.black87, fontSize: 13),
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.all(8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
                                       ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.black),
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      filled: true,
+                                      fillColor:
+                                          const Color.fromARGB(50, 81, 81, 70),
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),Container(
+                                  width: 1, // Set width for the line
+                                  height: 13, // Adjust height as needed
+                                  color: Colors.grey.shade300, // Set color
+                                ),
+                                SizedBox(
+                                  height: 50,
+                                  width: 39,
+                                  child: TextFormField(
+                                    onChanged: (value) {
+                                      if (value.length == 1) {
+                                        FocusScope.of(context).nextFocus();
+                                      }
+                                    },
+                                    textAlign: TextAlign.center,
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      LengthLimitingTextInputFormatter(1)
+                                    ],
+                                    style: const TextStyle(
+                                        color: Colors.black87, fontSize: 13),
+                                    decoration: InputDecoration(
+                                      contentPadding: const EdgeInsets.all(8.0),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide.none,
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: const BorderSide(
+                                            color: Colors.black),
+                                        borderRadius:
+                                            BorderRadius.circular(10.6),
+                                      ),
+                                      filled: true,
+                                      fillColor:
+                                          const Color.fromARGB(50, 81, 81, 70),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
-                            const SizedBox(
-                              height: 25,
+                          ),
+                          const SizedBox(
+                            height: 23,
+                          ),
+                          Text(
+                            "Resend code in: $_secondsRemaining secs",
+                            style: const TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.w600,
+                              fontFamily: "outfitMedium",
                             ),
-                            Text(
-                              "Resend code in: $_secondsRemaining secs",
-                              style: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600,
-                                fontFamily: "outfitMedium",
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

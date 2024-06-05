@@ -156,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "Please add your profile ",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 23,
+                        fontSize: 18,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -167,7 +167,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       "Picture and Username. ",
                       style: TextStyle(
                         fontFamily: "NexaDemo-Bold",
-                        fontSize: 23,
+                        fontSize: 18,
                         fontWeight: FontWeight.w900,
                       ),
                     ),
@@ -244,7 +244,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 13,
                         ),
                       ),
                     ),
@@ -268,7 +268,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         hintStyle: const TextStyle(
                           fontFamily: "Outfit-Medium",
                           color: Color.fromARGB(150, 72, 72, 72),
-                          fontSize: 16,
+                          fontSize: 13,
                         ),
                       ),
                     ),
@@ -287,7 +287,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           textStyle: const TextStyle(
                               fontFamily: "Outfit-Medium",
                               fontWeight: FontWeight.w700,
-                              fontSize: 23),
+                              fontSize: 18),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(5),
                           ),
